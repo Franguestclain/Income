@@ -1,0 +1,26 @@
+@import "./node_modules/bootstrap/scss/_functions.scss";
+@import "./node_modules/bootstrap/scss/_variables.scss";
+@import "./node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+
+// --------- HELPERS -------------
+@import "./2-helpers/_functions.scss";
+@import "./2-helpers/_mixins.scss";
+@import "./2-helpers/_variables.scss";
+
+
+
+// ---------- BASICS ------------
+@import "./3-basics/_base.scss";
+@import "./3-basics/_buttons.scss";
+@import "./3-basics/_links.scss";
+@import "./3-basics/_tipografia.scss";
+
+
+// ----------- PAGES ----------
+@import "./6-pages/_home.scss";
+
+
+//------------------ RESPONSIVE --------------
+
+@import "./5-modules/_responsive.scss";
