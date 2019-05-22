@@ -1,5 +1,5 @@
 // --------------------------------------------
-// Dependencies
+// Paquetes (Dependencias)
 // --------------------------------------------
 var autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
@@ -36,16 +36,16 @@ var styleSrc = 'source/sass/**/*.scss',
 
 
 // --------------------------------------------
-// Stand Alone Tasks
+// Tareas
 // --------------------------------------------
 
 
-// Compiles all SASS files
+// Compilar los archivos SASS
 gulp.task('sass', function() {
-    gulp.src(['node_modules/bootstrap/scss/bootstrap.scss','source/sass/**/*.scss'])
+    gulp.src(['node_modules/bootstrap/scss/bootstrap.scss','node_modules/slick-carousel/slick/slick.css','node_modules/slick-carousel/slick/slick-theme.css','source/sass/**/*.scss'])
         .pipe(plumber())
         .pipe(sass({
-            style: 'compressed'
+            outputStyle: 'compressed'
         }))
         .pipe(rename({
             suffix: '.min'
@@ -60,7 +60,7 @@ gulp.task('images', function() {
         .pipe(gulp.dest('build/assets/img'));
 });
 
-// Uglify js files
+// Transpilar y minificar JS
 gulp.task('scripts', function() {
 
     jsFILES.map(function( entry ){
@@ -77,19 +77,14 @@ gulp.task('scripts', function() {
         .pipe( sourcemaps.write( './' ) )
         .pipe( gulp.dest( scriptDest ) )
     });
-
-    // gulp.src('source/js/*.js')
-    //     .pipe(plumber())
-    //     .pipe(uglify())
-    //     .pipe(gulp.dest('build/assets/js'));
 });
 
-//Concat and Compress Vendor .js files
-// --------------- Agragar scrollreveal y bootstrap, lo veremos con jesseshowalter ------------------
+//Concatenar y comprimir archivos 3rd party
 gulp.task('vendors', function() {
     gulp.src(
             [
-                'source/js/vendors/jquery.min.js',
+                'node_modules/jquery/dist/jquery.js',
+                'node_modules/slick-carousel/slick/slick.js',
                 'source/js/vendors/fontawesome-all.min.js',
                 'source/js/vendors/*.js'
             ])
@@ -107,7 +102,7 @@ gulp.task('fonts', function(){
 
 
 
-// Watch for changes
+// Observar cambios
 gulp.task('watch', function(){
 
     // Serve files from the root of this project
@@ -118,15 +113,21 @@ gulp.task('watch', function(){
         notify: false
     });
 
+    // Observamos si hay cambios en bootrstrap o mis estilos sass, si los hay ejecutamos la tarea SASS
     gulp.watch([bootSrc, styleSrc],['sass']);
+    // Observamos cambios en la ruta de nuestros scripts, si los hay ejecutamos tarea scripts
     gulp.watch(jsFolder+scriptSrc,['scripts']);
+    // Observamos cambios en ruta vendors, si hay ejecutamos tarea vendors
     gulp.watch(vendorSrc,['vendors']);
+    // Al ejecutarse las tareas anteriores, los archivos en build se actualizaran, por lo tanto cambiaran
+    // Entonces estamos observando por cambios en esos archivos, si los hay, usamos evento
+    // "change" para recargar el navegador con la dependencia browserSync
     gulp.watch(['build/*.html', 'build/assets/css/*.css', 'build/assets/js/*.js', 'build/assets/js/vendors/*.js']).on('change', browserSync.reload);
 
 });
 
 
-// use default task to launch Browsersync and watch JS files
+// Usar la tarea default para correr todas las tareas mas aparte la tarea watch y observar cambios
 gulp.task('default', [ 'sass', 'scripts', 'vendors', 'watch'], function () {});
 
 

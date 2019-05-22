@@ -1,58 +1,36 @@
-@include media-breakpoint-down(lg){
-    .banner{
-        .partes{
-            .parte{
-                &.__1{
-                    width: 88px;
-                    animation: flotar 5s ease-in-out alternate-reverse infinite;
-                }
-                &.__2{
-                    width: 78px;
-                    animation: flotar 4s ease-in-out infinite;
-                }
-                &.__3{
-                    width: 180px;
-                    animation: flotar 6s ease-in-out infinite;
-                }
-                &.__4{
-                    width: 221px;
-                    animation: flotar 5s ease-in-out infinite;
-                }
-                &.__5{
-                    width: 35px;
-                    animation: flotar 8s ease-in-out infinite;
-                }
-                &.__6{
-                    width: 80px;
-                    animation: flotar 6s ease-in-out infinite;
-                }
-                &.__7{
-                    width: 84px;
-                    animation: flotar 7s ease-in-out infinite;
-                }
-                &.__8{
-                    width: 131px;
-                    animation: flotar 6.5s ease-in-out infinite;
+@media only screen and (max-width: 1500px){
+    .main{
+        .reemplazo{
+            .container{
+                .row{
+                    .maquina{
+                        width: 80%;
+                    }
                 }
             }
         }
     }
+}
+@include media-breakpoint-down(lg){
     .main{
-        .informacion-par{
-            .primera-parte{
-                .angulo{
-                    .texto{
-                        width: 46%;
+        .reemplazo{
+            .container{
+                .row{
+                    .maquina{
+                        width: 97%;
+                        right: -48%;
                     }
                 }
-                .motor{
-                    top: 1065px;
-                    width: 550px;
-                }
             }
-            .segunda-parte{
-                .texto{
-                    width: 46%;
+        }
+        .finders{
+            .container{
+                .row{
+                    .col-lg-6{
+                        &:last-child{
+                            padding: 5rem;
+                        }
+                    }
                 }
             }
         }
@@ -69,6 +47,370 @@
             .container-fluid{
                 .info-contacto{
                     width: 75%;
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    .navegacion{
+        flex-wrap: wrap;
+        .items{
+            order: 2;
+            width: 100%;
+            padding: 3rem 0;
+            background: #fff;
+            z-index: -2;
+            flex-direction: column;
+            align-items: center;
+            display: none;
+            .items-item{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+        .hamburguer{
+            display: block;
+            order: 1;
+        }
+        .logo{
+            width: 20%;
+            order: 0;
+        }
+        .hamburguer{
+            &.abierto{
+                .raya-3{
+                    transform: rotate(-45deg) translate(6.5px, -7px);
+                }
+            }
+        }
+    }
+    .main{
+        .refacciones,
+        .reemplazo{
+            height: auto;
+            padding: 6rem 0;
+            background: #fff;
+            .container{
+                .row{
+                    justify-content: center;
+                    .maquina{
+                        display: none;
+                    }
+                    .texto{
+                        text-align: center;
+                        width: 100%;
+                        padding: 1rem;
+                        .icono{
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+        .finders{
+            .container{
+                .row{
+                    .col-lg-6{
+                        &:first-child{
+                            height: 300px;
+                        }
+                        &:last-child{
+                            padding: 2rem;
+                        }
+                    }
+                }
+                .row-svg{
+                    .col-lg-6{
+                        &:first-child{
+                            svg{
+                                width: 34%;
+                            }
+                        }
+                        &:last-child{
+                            .container{
+                                padding-top: 2.5rem;
+                                padding-bottom: 2.5rem;
+                            }
+                        }
+                    }
+                    &--grande{
+                        .col-lg-6{
+                            &:last-child{
+                                .container{
+                                    padding-top: 1rem;
+                                    padding-bottom: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .testimonio{
+            .container{
+                .foto{
+                    margin-bottom: 3rem;
+                }
+                .texto{
+                    h3{
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+        }
+        .clientes{
+            ul{
+                grid-template-columns: repeat(4, auto);
+                padding: 10rem 0 4rem;
+                li{
+                    &:last-child{
+                        grid-column: 2/4;
+                    }
+                }
+            }
+        }
+        .newsletter{
+            .newsletter-form{
+                input[type="email"]{
+                    width: 100%;
+                }
+            }
+        }
+        .contacto{
+            .container{
+                .contacto-form{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    footer{
+        .mapa{
+            display: none;
+        }
+        .informacion{
+            text-align: center;
+            position: static;
+            .container-fluid{
+                flex-direction: column;
+                .info-contacto{
+                    width: 100%;
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    .navegacion{
+        .logo{
+            width: 23%;
+        }
+    }
+    .main{
+        .quienes{
+            .container{
+                .texto-medio{
+                    width: 90%;
+                }
+            }
+        }
+        .finders{
+            .container{
+                .row{
+                    .col-lg-6{
+                        &:first-child{
+                            height: 160px;
+                        }
+                    }
+                }
+            }
+        }
+        .servicios{
+            padding: 5rem 0;
+            .col-md-6{
+                padding-bottom: 1rem;
+                &:last-child{
+                    .container{
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        .tratos{
+            padding: 3rem 0;
+            .container{
+                .row{
+                    .col-md-6{
+                        &:first-child{
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .permisos{
+            .container{
+                .row{
+                    .col-md-6{
+                        &:first-child{
+                            order: 1;
+                        }
+                        &:last-child{
+                            order: 0;
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .bodega{
+            .container{
+                .row{
+                    .col-md-6{
+                        &:first-child{
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .clientes{
+            ul{
+                grid-template-columns: 50% 50% !important;
+                padding: 4rem 0 ;
+                li{
+                    &:last-child{
+                        grid-column: 1/3 !important;
+                    }
+                    img{
+                        width: 40%;
+                    }
+                }
+            }
+        }
+        .garantia{
+            padding: 3rem 0 4rem;
+            .container{
+                .row{
+                    .col-md-6{
+                        &:first-child{
+                            margin-bottom: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+        .contacto{
+            .container{
+                .contacto-form{
+                    .form-row{
+                        .form-group{
+                            &:first-child{
+                                order: 0;
+                            }
+                            &:nth-child(2){
+                                order: 2;
+                            }
+                            &:last-child{
+                                order: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+@include media-breakpoint-down(xs){
+    .navegacion{
+        transform: translateY(-138px);
+        .logo{
+            width: 35%;
+        }
+        .hamburguer{
+            width: 16%;
+            &.abierto{
+                .raya-3{
+                    transform: rotate(-45deg) translate(8px, -8px);
+                }
+                ~.items{
+                    z-index: 1;
+                }
+            }
+            .raya{
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .main{
+        .marcas{
+            .container{
+                h2{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .refacciones,
+        .reemplazo{
+            .container{
+                .row{
+                    .texto{
+                        text-align: center;
+                        width: 93%;
+                        p{
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+        .finders{
+            padding: 1rem;
+            .container{
+                margin: 4rem auto 0 auto;
+                .row-svg{
+                    .col-lg-6{
+                        &:first-child{
+                            svg{
+                                width: 43%;
+                            }
+                        }
+                        &:last-child{
+                            padding: 2rem 0;
+                            .container{
+                                margin: 3.5rem auto;
+                            }
+                        }
+                    }
+                    &--grande{
+                        .col-lg-6{
+                            &:last-child{
+                                .container{
+                                    margin: 2rem auto;
+                                }
+                            }
+                        }
+                    }
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+        .testimonio{
+            .container{
+                .texto{
+                    h3{
+                        font-size: 1.7rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                    }
                 }
             }
         }
