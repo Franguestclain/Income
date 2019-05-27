@@ -1,4 +1,6 @@
 // Usaremos import con scrollreveal y tweenmax que estan en node_modules
+import $ from 'jquery';
+import 'slick-carousel';
 import {Tweenmax} from "gsap";
 import {scrollreveal} from "scrollreveal";
 

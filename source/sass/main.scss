@@ -4,23 +4,23 @@
 
 
 // --------- HELPERS -------------
-@import "./2-helpers/_functions.scss";
-@import "./2-helpers/_mixins.scss";
-@import "./2-helpers/_variables.scss";
+// @import "./2-helpers/_functions.scss";
+// @import "./2-helpers/_mixins.scss";
+@import "./2-helpers/variables";
 
 
 
 // ---------- BASICS ------------
-@import "./3-basics/_base.scss";
-@import "./3-basics/_buttons.scss";
-@import "./3-basics/_links.scss";
-@import "./3-basics/_tipografia.scss";
+// @import "./3-basics/base";
+// @import "./3-basics/buttons";
+// @import "./3-basics/links";
+@import "./3-basics/tipografia";
 
 
 // ----------- PAGES ----------
-@import "./6-pages/_home.scss";
+@import "./6-pages/home";
 
 
 //------------------ RESPONSIVE --------------
 
-@import "./5-modules/_responsive.scss";
+@import "./5-modules/responsive";
